@@ -22,9 +22,17 @@ const config = require('./forward-wp-posts-config.json');
     process.stdout.write('記事データを取得しています...\x1b[K');
 
     // 取得
+    const getHeader = {};
+    if (config[from].isBasic) {
+        getHeader['Authorization'] = 'Basic ' + Buffer.from(`${config[from].basic.user}:${config[from].basic.password}`).toString('base64')
+    }
+
     const get = await fetch(
         config[from].URL + 'wp-json/wp/v2/posts?_fields=slug,status,type,title,excerpt,content', 
-        {'method':'GET'}
+        {
+            'method':'GET',
+            'headers': getHeader
+        }
     );
     const data = await get.json();
 
