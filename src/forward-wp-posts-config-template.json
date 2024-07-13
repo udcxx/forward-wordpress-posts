@@ -1,0 +1,18 @@
+{
+    "local": {
+        "URL": "http://localhost:8888/",
+        "user": "wordpress-username",
+        "password": "wordpress-password",
+        "isBasic": false
+    },
+    "remote": {
+        "URL": "https://example.com/",
+        "user": "wordpress-username",
+        "password": "wordpress-password",
+        "isBasic": true,
+        "basic": {
+            "user": "Basic-username",
+            "password": "Basic-password"
+        }
+    }
+}
