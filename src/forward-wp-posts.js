@@ -32,7 +32,7 @@ const config = require('./forward-wp-posts-config.json');
     }
 
     const get = await fetch(
-        config[from].URL + 'wp-json/wp/v2/posts?_fields=slug,status,type,title,excerpt,content,id', 
+        config[from].URL + 'wp-json/wp/v2/posts?_fields=slug,status,type,title,excerpt,content,id&per_page=100', 
         {
             'method':'GET',
             'headers': getHeader
